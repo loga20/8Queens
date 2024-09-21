@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body{
+            background: linear-gradient(lightgreen,orange);
+            font-weight: bold;
+        }
+        button{
+            text-align: center;
+        }
+        form,input,textarea{
+            font-size:large;
+            text-align: left;
+            margin: 0px 290px 0px 320px;
+            border-radius: 3px;
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function isletterkey(event){
+            var charCode=(event.which)?event.which:event.keyCode;
+            if((charCode<65||charCode>90)&&(charCode<97||charCode>122)){
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+        function isnumerickey(event){
+            var charCode=(event.which)?event.which:evt.key;
+            if(charCode<48||charCode>57){
+                event.preventDefault();
+                return false;
+            }else
+            return true;
+        }
+    </script>
+    <!-- <script>
+        function myfunction(){
+            document.getElementById("idd").innerHTML="Fill out!";
+        }
+    </script> -->
+</head>
+<body>
+    <h1>Registration</h1>
+    
+    <form>
+        <label for="idd">Id:</label>
+        <input type="phone" name="id" id="idd" required><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" onkeypress="return isletterkey(event)" required><br>
+        <label for="course">Course:</label>
+        <input type="text" name="cour" id="course" required><br>
+        <label for="Bran">Branch:</label>
+        <input type="text" name="Bran" id="Bran" required><br>
+        <label for="roll">Roll no:</label>
+        <input type="rollno" name="roll" id="roll" onkeypress="return isnumerickey(event)" required><br>
+        <label for="email">Email_Address:</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="user">User_Name:</label>
+        <input type="text" name="user" id="user" onkeypress="return isletterkey(event)" required><br>
+        <label for="comment">About Us:</label>
+        <textarea name="comment" rows="2"></textarea><br>
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" id="pass" required><br>
+        <button type="submit" value="Add">Submit</button> 
+    </form>
+</body>
+</html>
